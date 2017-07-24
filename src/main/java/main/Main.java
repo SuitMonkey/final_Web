@@ -522,7 +522,7 @@ public static void main(String [] args)
 
     post("/validacion", (request, response) -> {
         Map<String, Object> attributes = new HashMap<>();
-        Session session=request.session(true);
+        Session session = request.session(true);
 
         if(session.attribute("sesion"))
         {
