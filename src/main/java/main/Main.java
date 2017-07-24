@@ -495,7 +495,7 @@ public static void main(String [] args)
             foto = "data:image/png;base64,"+Base64.getEncoder().encodeToString(encoded);
 
         }
-        String user = request.queryParams("8");
+        String user = request.queryParams("user");
         String nombre = request.queryParams("nombre");
         String pass = request.queryParams("pass");
         String correo = request.queryParams("correo");
@@ -685,11 +685,6 @@ public static void main(String [] args)
         return new ModelAndView(attributes, "contact.ftl");
     }, freeMarkerEngine);
 
-    get("/login", (request, response) -> {
-        Map<String, Object> attributes = new HashMap<>();
-
-        return new ModelAndView(attributes, "login.ftl");
-    }, freeMarkerEngine);
 
     get("/register", (request, response) -> {
         Map<String, Object> attributes = new HashMap<>();
