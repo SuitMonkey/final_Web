@@ -84,16 +84,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- //header -->
 <!-- register -->
 			<div class="sign-up-form">
-				<h3>Register Here</h3>
-					<p>Having hands on experience in creating innovative designs,I do offer design 
-						solutions which harness</p>
+				<h3>Registro</h3>
+					<#--<p>Having hands on experience in creating innovative designs,I do offer design -->
+						<#--solutions which harness</p>-->
 				<div class="sign-up">
-					<h5>Personal Information</h5>
+					<h5>Informacion Personal</h5>
 					<div class="sign-u">
-						<div class="sign-up1">
-							<h4 class="a">First Name* :</h4>
+                        <div class="sign-up1">
+                            <div><canvas id="myCanvas" width="400" height="400"></canvas></div>
+                            <input type='file' id="imgInp" name="imgInp"/>
 						</div>
-						<div class="sign-up2">
+                        <div class="sign-up2">
+                            <h4 class="a">First Name* :</h4>
+                        </div>
+						<div class="sign-up3">
 							<form>
 								<input type="text" placeholder=" " required=" "/>
 							</form>
@@ -122,7 +126,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 						<div class="clearfix"> </div>
 					</div>
-					<h6>Login Information</h6>
+					<h6>Datos de la Cuenta</h6>
 					<div class="sign-u">
 						<div class="sign-up1">
 							<h4 class="d">Password* :</h4>
@@ -149,6 +153,30 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<input type="submit" value="Submit">
 					</form>
 				</div>
+                <script>
+
+                    var image = new Image();
+                    var canvas = document.getElementById("myCanvas");
+                    var ctx = canvas.getContext("2d");
+                    ctx.fillStyle = "black";
+                    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+                    document.getElementById('imgInp').onchange = function handleImage(e) {
+                        var reader = new FileReader();
+                        reader.onload = function (event) { console.log('fdsf');
+                            var canvas = document.getElementById("myCanvas");
+                            var canvasContext = canvas.getContext("2d");
+                            var imgObj = new Image();
+                            imgObj.src = event.target.result;
+                            image.src = imgObj.src;
+                            console.log(imgObj.width+" "+imgObj.height);
+                            imgObj.onload = function () {
+                                canvasContext.drawImage(imgObj, 0, 0,canvas.width,canvas.height);
+                            }
+                        }
+                        reader.readAsDataURL(e.target.files[0]);
+                    }
+                </script>
 			</div>
 <!-- //register -->
 		</div>

@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html>
 <head>
-<title>Quickly a Blogging Category Flat Bootstarp Resposive Website Template | Login :: w3layouts</title>
+<title>Quickly a Blogging Category Flat Bootstarp Resposive Website Template | Portfolio :: w3layouts</title>
 <!-- for-mobile-apps -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -33,11 +33,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	});
 </script>
 <!-- start-smoth-scrolling -->
+<!-- for portfolio -->
+<link rel="stylesheet" type="text/css" href="css/style5.css" />
+<link rel="stylesheet" type="text/css" href="css/common.css" />
+<!-- //for portfolio -->
 </head>
 	
 <body>
 <!-- banner-body -->
-	<div class="banner-body logn">
+	<div class="banner-body abt">
 		<div class="container">
 <!-- header -->
 			<div class="header">
@@ -59,7 +63,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						 <ul class="nav navbar-nav">
 							<li class="hvr-bounce-to-bottom"><a href="home.ftl">Home</a></li>
 							<li class="hvr-bounce-to-bottom"><a href="about.ftl">About</a></li>
-							<li class="hvr-bounce-to-bottom"><a href="Portfolio.html">Portfolio</a></li>
+							<li class="hvr-bounce-to-bottom active"><a href="Portfolio.html">Portfolio</a></li>
 							<li class="hvr-bounce-to-bottom"><a href="Pages.html">Pages</a></li>
 							<li class="hvr-bounce-to-bottom"><a href="contact.ftl">Contact Us</a></li>
 						  </ul>
@@ -82,97 +86,87 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<!-- //search-scripts -->
 			</div>
 <!-- //header -->
-<!-- login-page -->
-	<div class="login">
-		<div class="login-grids">
-			<div class="col-md-6 log">
-					 <h3>Login</h3>
-					 <p>Welcome, please enter the following to continue.</p>
-					 <form method="post" action="/validacion">
-						 <h5>User Name:</h5>	
-						 <input type="text" name="user" value="">
-						 <h5>Password:</h5>
-						 <input type="password" id="userPassword" value="">
-						 <input type="submit" value="Login">
-						  
-					 </form>
-					<#--<a href="#">Forgot Password ?</a>-->
+<!-- portfolio -->
+			<div class="portfolio">
+				<h3>portfolio</h3>
+				<#if user??>
+                    <div class="col-md-12">
+						<h3 style="padding-top: 0">${user.getNombre()}</h3>
+						<div class="footer-grd-left">
+							<img src="${user.getFoto()}" class="img-responsive">
+						</div>
+						<div class="footer-grd-left">
+							<p>${user.getDescription()}	</p>
+						</div>
+					</div>
+                    <div class="clearfix"> </div>
+						<div class="footer-grd-left">
+							<#if user.isPrivacidad()>
+                                <p>Publicaciones: Privadas</p>
+							<#else>
+                                <p>Publicaciones: Publicas</p>
+							</#if>
+						</div>
+                    <div class="clearfix"> </div>
+                    <div class="col-md-12">
+                        <h3>Instaglam Posts</h3>
+                        <aquivanlosposts>
+
+						</aquivanlosposts>
+						<div class="clearfix"> </div>
+                    </div>
+                    <div class="clearfix"> </div>
+				<#else>
+                    <div class="col-md-12">
+						<h3 style="padding-top: 0">Username's Profile</h3>
+						<div class="footer-grd-left">
+							<img src="images/11.jpg" class="img-responsive" alt=" " />
+						</div>
+						<div class="footer-grd-left">
+							<p>This is my totally awesome bio</p>
+						</div>
+                        <div class="clearfix"> </div>
+                        <div class="footer-grd-left">
+                            <p>Publicaciones: Publicas</p>
+						</div>
+						<div class="clearfix"> </div>
+                	</div>
+                    <div class="col-md-12">
+                        <h3>Flckr Posts</h3>
+                        <div class="footer-grd">
+                            <img src="images/7.jpg" class="img-responsive" alt=" " />
+                        </div>
+                        <div class="footer-grd">
+                            <img src="images/8.jpg" class="img-responsive" alt=" " />
+                        </div>
+                        <div class="footer-grd">
+                            <img src="images/9.jpg" class="img-responsive" alt=" " />
+                        </div>
+                        <div class="clearfix"> </div>
+                        <div class="footer-grd">
+                            <img src="images/10.jpg" class="img-responsive" alt=" " />
+                        </div>
+                        <div class="footer-grd">
+                            <img src="images/7.jpg" class="img-responsive" alt=" " />
+                        </div>
+                        <div class="footer-grd">
+                            <img src="images/8.jpg" class="img-responsive" alt=" " />
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <div class="clearfix"> </div>
+				</#if>
+
 			</div>
-			<div class="col-md-6 login-right">
-					<h3>New Registration</h3>
-					<#--<p>By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.</p>-->
-					<p>Comparte tus momentos favoritos, sigue a tus amigos y disfruta de todos nuestros servicios ya!. Crea una nueva cuenta aqui.</p>
-					<a href="/registro" class="hvr-bounce-to-bottom button">Crear una Cuenta</a>
-			</div>
-			<div class="clearfix"></div>
-		</div>
-	</div>
-<!-- //login-page -->
+<!-- //portfolio -->
 		</div>
 	</div>
 <!-- footer -->
 	<div class="footer">
 		<div class="container">
 			<div class="footer-grids">
-				<div class="col-md-3 footer-grid">
-					<h3>cumque nihil impedit</h3>
-					<div class="footer-grd-left">
-						<img src="images/11.jpg" class="img-responsive" alt=" " />
-					</div>
-					<div class="footer-grd-left">
-						<p>Nam libero tempore, cum 
-							soluta nobis est eligendi optio cumque nihil impedit quo minus 
-							id quod maxime placeat facere possimus, omnis voluptas assumenda 
-							est, omnis dolor repellendus</p>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="col-md-3 footer-grid">
-					<h3>voluptas assumenda</h3>
-					<ul>
-						<li><a href="#">doloribus asperiores</a></li>
-						<li><a href="#">Itaque earum rerum</a></li>
-						<li><a href="#">deserunt mollitia</a></li>
-						<li><a href="#">facilis est et expedita</a></li>
-						<li><a href="#">occaecati cupiditate</a></li>
-						<li><a href="#">deserunt mollitia laborum</a></li>
-					</ul>
-				</div>
-				<div class="col-md-3 footer-grid">
-					<h3>deserunt mollitia</h3>
-					<ul>
-						<li><a href="#">doloribus asperiores</a></li>
-						<li><a href="#">Itaque earum rerum</a></li>
-						<li><a href="#">deserunt mollitia</a></li>
-						<li><a href="#">facilis est et expedita</a></li>
-						<li><a href="#">occaecati cupiditate</a></li>
-						<li><a href="#">deserunt mollitia laborum</a></li>
-					</ul>
-				</div>
-				<div class="col-md-3 footer-grid">
-					<h3>Flckr Posts</h3>
-					<div class="footer-grd">
-						<img src="images/7.jpg" class="img-responsive" alt=" " />
-					</div>
-					<div class="footer-grd">
-						<img src="images/8.jpg" class="img-responsive" alt=" " />
-					</div>
-					<div class="footer-grd">
-						<img src="images/9.jpg" class="img-responsive" alt=" " />
-					</div>
-					<div class="clearfix"> </div>
-					<div class="footer-grd">
-						<img src="images/10.jpg" class="img-responsive" alt=" " />
-					</div>
-					<div class="footer-grd">
-						<img src="images/7.jpg" class="img-responsive" alt=" " />
-					</div>
-					<div class="footer-grd">
-						<img src="images/8.jpg" class="img-responsive" alt=" " />
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="clearfix"> </div>
+
+
 			</div>
 		</div>
 	</div>

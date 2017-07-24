@@ -495,7 +495,7 @@ public static void main(String [] args)
             foto = "data:image/png;base64,"+Base64.getEncoder().encodeToString(encoded);
 
         }
-        String user = request.queryParams("user");
+        String user = request.queryParams("8");
         String nombre = request.queryParams("nombre");
         String pass = request.queryParams("pass");
         String correo = request.queryParams("correo");

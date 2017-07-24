@@ -29,8 +29,8 @@
                 </ul>
                 <div class="sign-in">
                     <ul>
-                        <li><a href="login.ftl">Entrar </a>/</li>
-                        <li><a href="register.ftl">Registrar</a></li>
+                        <li><a href="/login">Entrar </a>/</li>
+                        <li><a href="/registro">Registrar</a></li>
                     </ul>
                 </div>
             </div>
