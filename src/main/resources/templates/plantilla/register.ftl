@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html>
 <head>
-<title>Quickly a Blogging Category Flat Bootstarp Resposive Website Template | Contact :: w3layouts</title>
+<title>Quickly a Blogging Category Flat Bootstarp Resposive Website Template | Register :: w3layouts</title>
 <!-- for-mobile-apps -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -37,7 +37,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	
 <body>
 <!-- banner-body -->
-	<div class="banner-body cntct">
+	<div class="banner-body regstr">
 		<div class="container">
 <!-- header -->
 			<div class="header">
@@ -51,21 +51,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						  </button>
-						   <a class="navbar-brand" href="home.ftl"><span>Q</span>uickly</a>
+						   <a class="navbar-brand" href="../home.ftl"><span>Q</span>uickly</a>
 						</div>
 
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
 						 <ul class="nav navbar-nav">
-							<li class="hvr-bounce-to-bottom"><a href="home.ftl">Home</a></li>
+							<li class="hvr-bounce-to-bottom"><a href="../home.ftl">Home</a></li>
 							<li class="hvr-bounce-to-bottom"><a href="about.ftl">About</a></li>
 							<li class="hvr-bounce-to-bottom"><a href="Portfolio.html">Portfolio</a></li>
 							<li class="hvr-bounce-to-bottom"><a href="Pages.html">Pages</a></li>
-							<li class="hvr-bounce-to-bottom active"><a href="contact.ftl">Contact Us</a></li>
+							<li class="hvr-bounce-to-bottom"><a href="contact.ftl">Contact Us</a></li>
 						  </ul>
 						  <div class="sign-in">
 							<ul>
-								<li><a href="login.ftl">Sign In </a>/</li>
+								<li><a href="../login.ftl">Sign In </a>/</li>
 								<li><a href="register.ftl">Register</a></li>
 							</ul>
 							</div>
@@ -82,56 +82,103 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<!-- //search-scripts -->
 			</div>
 <!-- //header -->
-<!-- contact -->
-	<div class="contact">
-		<div class="contact-left">
-			<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2620.908687693293!2d2.3574429999999995!3d48.936181!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66eb34e18b951%3A0xc3c6a4ac9498bfce!2sWorld&#39;s+Business+Import!5e0!3m2!1sen!2sin!4v1429768672602" frameborder="0" style="border:0"></iframe>
-		</div>
-		<div class="contact-right">
-			<p class="phn">+9100 2481 5842</p>
-			<p class="phn-bottom">4578 Marmora
-					<span>Road, Glasgow D04 89GR</span></p>
-			<p class="lom">Nullam ac urna velit. Pellentesque in arcu tortor. 
-				Pellentesque nec est et elit varius pulvinar eget vitae sapien. 
-				Aenean vehicula accumsan gravida.</p>
-		</div>
-		<div class="clearfix"> </div>
-		<div class="contact-left1">
-			<h3>Contact Us With <span>Any Queston</span></h3>
-			<div class="in-left">
-				<form>
-					<input type="text" placeholder="Your Name:" required=" ">
-					<input type="text" placeholder="Phone Number:" required=" ">
-					<input type="text" placeholder="E-mail:" required=" ">				
-				</form>
+<!-- register -->
+			<div class="sign-up-form">
+				<h3>Registro</h3>
+					<#--<p>Having hands on experience in creating innovative designs,I do offer design -->
+						<#--solutions which harness</p>-->
+				<div class="sign-up">
+					<h5>Informacion Personal</h5>
+					<div class="sign-u">
+                        <div class="sign-up1">
+                            <div><canvas id="myCanvas" width="400" height="400"></canvas></div>
+                            <input type='file' id="imgInp" name="imgInp"/>
+						</div>
+                        <div class="sign-up2">
+                            <h4 class="a">First Name* :</h4>
+                        </div>
+						<div class="sign-up3">
+							<form>
+								<input type="text" placeholder=" " required=" "/>
+							</form>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+					<div class="sign-u">
+						<div class="sign-up1">
+							<h4 class="b">Last Name* :</h4>
+						</div>
+						<div class="sign-up2">
+							<form>
+								<input type="text" placeholder=" " required=" "/>
+							</form>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+					<div class="sign-u">
+						<div class="sign-up1">
+							<h4 class="c">Email Address* :</h4>
+						</div>
+						<div class="sign-up2">
+							<form>
+								<input type="text" placeholder=" " required=" "/>
+							</form>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+					<h6>Datos de la Cuenta</h6>
+					<div class="sign-u">
+						<div class="sign-up1">
+							<h4 class="d">Password* :</h4>
+						</div>
+						<div class="sign-up2">
+							<form>
+								<input type="password" placeholder=" " required=" "/>
+							</form>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+					<div class="sign-u">
+						<div class="sign-up1">
+							<h4>Confirm Password* :</h4>
+						</div>
+						<div class="sign-up2">
+							<form>
+								<input type="password" placeholder=" " required=" "/>
+							</form>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+					<form>
+						<input type="submit" value="Submit">
+					</form>
+				</div>
+                <script>
+
+                    var image = new Image();
+                    var canvas = document.getElementById("myCanvas");
+                    var ctx = canvas.getContext("2d");
+                    ctx.fillStyle = "black";
+                    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+                    document.getElementById('imgInp').onchange = function handleImage(e) {
+                        var reader = new FileReader();
+                        reader.onload = function (event) { console.log('fdsf');
+                            var canvas = document.getElementById("myCanvas");
+                            var canvasContext = canvas.getContext("2d");
+                            var imgObj = new Image();
+                            imgObj.src = event.target.result;
+                            image.src = imgObj.src;
+                            console.log(imgObj.width+" "+imgObj.height);
+                            imgObj.onload = function () {
+                                canvasContext.drawImage(imgObj, 0, 0,canvas.width,canvas.height);
+                            }
+                        }
+                        reader.readAsDataURL(e.target.files[0]);
+                    }
+                </script>
 			</div>
-			<div class="in-right">
-				<form>
-					<textarea placeholder="Message:" required=" "></textarea>
-					<input type="submit" value="Submit">
-				</form>
-			</div>
-			<div class="clearfix"> </div>
-		</div>
-		<div class="contact-right1">
-			<h3>Find Us On <span>Social Websites</span></h3>
-			<h4>Nullam ac urna velit pellentesque in <label>arcu tortor 
-				Pellentesque nec</label></h4>
-			<p>Nullam ac urna velit. Pellentesque in arcu tortor. 
-				Pellentesque nec est et elit varius pulvinar eget vitae sapien. 
-				Aenean vehicula accumsan gravida. Cum sociis natoque penatibus
-				et magnis dis parturient montes, nascetur ridiculus mus. Phasellus 
-				et lectus in urna consequat consectetur ut eget risus.</p>
-			<ul>
-				<li><a href="#" class="g1"> </a></li>
-				<li><a href="#" class="p1"> </a></li>
-				<li><a href="#" class="facebook1"> </a></li>
-				<li><a href="#" class="twitter1"> </a></li>
-			</ul>
-		</div>
-		<div class="clearfix"> </div>
-	</div>
-<!-- //contact -->
+<!-- //register -->
 		</div>
 	</div>
 <!-- footer -->

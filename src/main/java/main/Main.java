@@ -520,6 +520,22 @@ public static void main(String [] args)
         return new ModelAndView(attributes, "registrar.ftl");
     }, freeMarkerEngine);
 
+    before("/validacion",(request, response) -> {
+        Session session=request.session(true);
+
+        String user = request.queryParams("user");
+        String pass = request.queryParams("pass");
+        Usuario comprobar = UsuarioQueries.getInstancia().find(user);
+        if(comprobar!=null) {
+            if (comprobar.getPassword().equals(pass)) {
+                session.attribute("sesion", true);
+                session.attribute("currentUser", comprobar);
+            }
+        }
+        else session.attribute("sesion", false);
+
+    });
+
     post("/validacion", (request, response) -> {
         Map<String, Object> attributes = new HashMap<>();
         Session session = request.session(true);
@@ -541,6 +557,15 @@ public static void main(String [] args)
         //response.redirect("/zonaadmin/");
         return new ModelAndView(attributes, "validacion.ftl");
     }, freeMarkerEngine);
+
+    before("/listado",((request, response) -> {
+        Session sesion = request.session(true);
+        try{
+            System.out.println(sesion.attribute("sesion").toString());
+        }catch (Exception e){
+            halt(403,"Primero, tiene que entrar con su cuenta de usuario");
+        }
+    }));
 
     get("/listado", (request, response) -> {
         Map<String, Object> attributes = new HashMap<>();
@@ -567,13 +592,12 @@ public static void main(String [] args)
                 }
             }
 
-
             attributes.put("follows", us.getFollow());
             attributes.put("usuarios", choosen);
         }
 
 
-        return new ModelAndView(attributes, "administrarUsuarios.ftl");
+        return new ModelAndView(attributes, "listado.ftl");
     }, freeMarkerEngine);
 
     post("/listado", (request, response) -> {
@@ -615,22 +639,6 @@ public static void main(String [] args)
         return new ModelAndView(attributes, "administrarUsuarios.ftl");
     }, freeMarkerEngine);
 
-    before("/validacion",(request, response) -> {
-        Session session=request.session(true);
-
-        String user = request.queryParams("user");
-        String pass = request.queryParams("pass");
-        Usuario comprobar = UsuarioQueries.getInstancia().find(user);
-        if(comprobar!=null) {
-            if (comprobar.getPassword().equals(pass)) {
-                session.attribute("sesion", true);
-                session.attribute("currentUser", comprobar);
-            }
-        }
-        else session.attribute("sesion", false);
-
-    });
-
     before("/page/:pagina",(request, response) -> {
         int pagina = Integer.valueOf(request.params(":pagina"));
         int max = (int)getCantPag(ArticulosQueries.getInstancia().findAllSorted().size());
@@ -671,12 +679,10 @@ public static void main(String [] args)
         return new ModelAndView(attributes, "chat.ftl");
     }, freeMarkerEngine);
 
-
-
     get("/about", (request, response) -> {
         Map<String, Object> attributes = new HashMap<>();
 
-        return new ModelAndView(attributes, "about.ftl");
+        return new ModelAndView(attributes, "plantilla/about.ftl");
     }, freeMarkerEngine);
 
     get("/contact", (request, response) -> {

@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html>
 <head>
-<title>Quickly a Blogging Category Flat Bootstarp Resposive Website Template | Single :: w3layouts</title>
+<title>Quickly a Blogging Category Flat Bootstarp Resposive Website Template | Contact :: w3layouts</title>
 <!-- for-mobile-apps -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -37,7 +37,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	
 <body>
 <!-- banner-body -->
-	<div class="banner-body abt">
+	<div class="banner-body cntct">
 		<div class="container">
 <!-- header -->
 			<div class="header">
@@ -51,21 +51,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						  </button>
-						   <a class="navbar-brand" href="home.ftl"><span>Q</span>uickly</a>
+						   <a class="navbar-brand" href="../home.ftl"><span>Q</span>uickly</a>
 						</div>
 
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
 						 <ul class="nav navbar-nav">
-							<li class="hvr-bounce-to-bottom"><a href="home.ftl">Home</a></li>
+							<li class="hvr-bounce-to-bottom"><a href="../home.ftl">Home</a></li>
 							<li class="hvr-bounce-to-bottom"><a href="about.ftl">About</a></li>
 							<li class="hvr-bounce-to-bottom"><a href="Portfolio.html">Portfolio</a></li>
 							<li class="hvr-bounce-to-bottom"><a href="Pages.html">Pages</a></li>
-							<li class="hvr-bounce-to-bottom"><a href="contact.ftl">Contact Us</a></li>
+							<li class="hvr-bounce-to-bottom active"><a href="contact.ftl">Contact Us</a></li>
 						  </ul>
 						  <div class="sign-in">
 							<ul>
-								<li><a href="login.ftl">Sign In </a>/</li>
+								<li><a href="../login.ftl">Sign In </a>/</li>
 								<li><a href="register.ftl">Register</a></li>
 							</ul>
 							</div>
@@ -82,69 +82,56 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<!-- //search-scripts -->
 			</div>
 <!-- //header -->
-<!-- single -->
-	<div class="single-page-artical">
-		<div class="artical-content">
-			<h3>Lorem Ipsum is simply dummy text</h3>
-			<img class="img-responsive" src="images/banner.jpg" alt=" " />
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-				 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-				 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<!-- contact -->
+	<div class="contact">
+		<div class="contact-left">
+			<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2620.908687693293!2d2.3574429999999995!3d48.936181!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66eb34e18b951%3A0xc3c6a4ac9498bfce!2sWorld&#39;s+Business+Import!5e0!3m2!1sen!2sin!4v1429768672602" frameborder="0" style="border:0"></iframe>
 		</div>
-		<div class="artical-links">
-			<ul>
-				<li><small> </small><span>June 30, 2015</span></li>
-				<li><a href="#"><small class="admin"> </small><span>admin</span></a></li>
-				<li><a href="#"><small class="no"> </small><span>No comments</span></a></li>
-				<li><a href="#"><small class="posts"> </small><span>View posts</span></a></li>
-				<li><a href="#"><small class="link"> </small><span>permalink</span></a></li>
-			</ul>
+		<div class="contact-right">
+			<p class="phn">+9100 2481 5842</p>
+			<p class="phn-bottom">4578 Marmora
+					<span>Road, Glasgow D04 89GR</span></p>
+			<p class="lom">Nullam ac urna velit. Pellentesque in arcu tortor. 
+				Pellentesque nec est et elit varius pulvinar eget vitae sapien. 
+				Aenean vehicula accumsan gravida.</p>
 		</div>
-		<div class="comment-grid-top">
-			<h3>Responses</h3>
-			<div class="comments-top-top">
-				<div class="top-comment-left">
-					<a href="#"><img class="img-responsive" src="images/co.png" alt=""></a>
-				</div>
-				<div class="top-comment-right">
-					<ul>
-						<li><span class="left-at"><a href="#">Admin</a></span></li>
-						<li><span class="right-at">June 30, 2015 at 10.30am</span></li>
-						<li><a class="reply" href="#">REPLY</a></li>
-					</ul>
-				<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.The point of using Lorem Ipsum is that it has a more-or-less </p>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-			<div class="comments-top-top top-grid-comment">
-				<div class="top-comment-left">
-					<a href="#"><img class="img-responsive" src="images/co.png" alt=""></a>
-				</div>
-				<div class="top-comment-right">
-					<ul>
-						<li><span class="left-at"><a href="#">Admin</a></li>
-						<li><span class="right-at">June 30, 2015 at 10.30am</span></li>
-						<li><a class="reply" href="#">REPLY</a></li>
-					</ul>
-				<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.The point of using Lorem Ipsum is that it has a more-or-less </p>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-		</div>			
-		<div class="artical-commentbox">
-			<h3>leave a comment</h3>
-			<div class="table-form">
+		<div class="clearfix"> </div>
+		<div class="contact-left1">
+			<h3>Contact Us With <span>Any Queston</span></h3>
+			<div class="in-left">
 				<form>
-					<input type="text" class="textbox" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}">
-					<input type="text" class="textbox" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}">
-					<input type="text" class="textbox" value="Phone number" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Phone number';}">
-					<textarea value="Message:" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message';}">Message</textarea>	
-					<input type="submit" value="Send">
+					<input type="text" placeholder="Your Name:" required=" ">
+					<input type="text" placeholder="Phone Number:" required=" ">
+					<input type="text" placeholder="E-mail:" required=" ">				
 				</form>
 			</div>
-		</div>	
+			<div class="in-right">
+				<form>
+					<textarea placeholder="Message:" required=" "></textarea>
+					<input type="submit" value="Submit">
+				</form>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+		<div class="contact-right1">
+			<h3>Find Us On <span>Social Websites</span></h3>
+			<h4>Nullam ac urna velit pellentesque in <label>arcu tortor 
+				Pellentesque nec</label></h4>
+			<p>Nullam ac urna velit. Pellentesque in arcu tortor. 
+				Pellentesque nec est et elit varius pulvinar eget vitae sapien. 
+				Aenean vehicula accumsan gravida. Cum sociis natoque penatibus
+				et magnis dis parturient montes, nascetur ridiculus mus. Phasellus 
+				et lectus in urna consequat consectetur ut eget risus.</p>
+			<ul>
+				<li><a href="#" class="g1"> </a></li>
+				<li><a href="#" class="p1"> </a></li>
+				<li><a href="#" class="facebook1"> </a></li>
+				<li><a href="#" class="twitter1"> </a></li>
+			</ul>
+		</div>
+		<div class="clearfix"> </div>
 	</div>
-<!-- single -->
+<!-- //contact -->
 		</div>
 	</div>
 <!-- footer -->

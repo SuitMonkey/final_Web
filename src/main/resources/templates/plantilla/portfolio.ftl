@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html>
 <head>
-<title>Quickly a Blogging Category Flat Bootstarp Resposive Website Template | Register :: w3layouts</title>
+<title>Quickly a Blogging Category Flat Bootstarp Resposive Website Template | Portfolio :: w3layouts</title>
 <!-- for-mobile-apps -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -33,11 +33,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	});
 </script>
 <!-- start-smoth-scrolling -->
+<!-- for portfolio -->
+<link rel="stylesheet" type="text/css" href="css/style5.css" />
+<link rel="stylesheet" type="text/css" href="css/common.css" />
+<!-- //for portfolio -->
 </head>
 	
 <body>
 <!-- banner-body -->
-	<div class="banner-body regstr">
+	<div class="banner-body abt">
 		<div class="container">
 <!-- header -->
 			<div class="header">
@@ -51,21 +55,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						  </button>
-						   <a class="navbar-brand" href="home.ftl"><span>Q</span>uickly</a>
+						   <a class="navbar-brand" href="../home.ftl"><span>Q</span>uickly</a>
 						</div>
 
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
 						 <ul class="nav navbar-nav">
-							<li class="hvr-bounce-to-bottom"><a href="home.ftl">Home</a></li>
+							<li class="hvr-bounce-to-bottom"><a href="../home.ftl">Home</a></li>
 							<li class="hvr-bounce-to-bottom"><a href="about.ftl">About</a></li>
-							<li class="hvr-bounce-to-bottom"><a href="Portfolio.html">Portfolio</a></li>
+							<li class="hvr-bounce-to-bottom active"><a href="Portfolio.html">Portfolio</a></li>
 							<li class="hvr-bounce-to-bottom"><a href="Pages.html">Pages</a></li>
 							<li class="hvr-bounce-to-bottom"><a href="contact.ftl">Contact Us</a></li>
 						  </ul>
 						  <div class="sign-in">
 							<ul>
-								<li><a href="login.ftl">Sign In </a>/</li>
+								<li><a href="../login.ftl">Sign In </a>/</li>
 								<li><a href="register.ftl">Register</a></li>
 							</ul>
 							</div>
@@ -82,103 +86,140 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<!-- //search-scripts -->
 			</div>
 <!-- //header -->
-<!-- register -->
-			<div class="sign-up-form">
-				<h3>Registro</h3>
-					<#--<p>Having hands on experience in creating innovative designs,I do offer design -->
-						<#--solutions which harness</p>-->
-				<div class="sign-up">
-					<h5>Informacion Personal</h5>
-					<div class="sign-u">
-                        <div class="sign-up1">
-                            <div><canvas id="myCanvas" width="400" height="400"></canvas></div>
-                            <input type='file' id="imgInp" name="imgInp"/>
+<!-- portfolio -->
+			<div class="portfolio">
+				<h3>portfolio</h3>
+			<section class="main">
+				<ul class="ch-grid">
+					<li>
+						<div class="ch-item ch-img-1">				
+							<div class="ch-info-wrap">
+								<div class="ch-info">
+									<div class="ch-info-front ch-img-1"></div>
+									<div class="ch-info-back">
+										<h3>officiis</h3>
+										<p> Temporibus autem quibusdam.</p>
+									</div>	
+								</div>
+							</div>
 						</div>
-                        <div class="sign-up2">
-                            <h4 class="a">First Name* :</h4>
-                        </div>
-						<div class="sign-up3">
-							<form>
-								<input type="text" placeholder=" " required=" "/>
-							</form>
+					</li>
+					<li>
+						<div class="ch-item ch-img-2">
+							<div class="ch-info-wrap">
+								<div class="ch-info">
+									<div class="ch-info-front ch-img-2"></div>
+									<div class="ch-info-back">
+										<h3>autem</h3>
+										<p>Temporibus autem quibusdam.</p>
+									</div>
+								</div>
+							</div>
 						</div>
-						<div class="clearfix"> </div>
-					</div>
-					<div class="sign-u">
-						<div class="sign-up1">
-							<h4 class="b">Last Name* :</h4>
+					</li>
+					<li>
+						<div class="ch-item ch-img-3">
+							<div class="ch-info-wrap">
+								<div class="ch-info">
+									<div class="ch-info-front ch-img-3"></div>
+									<div class="ch-info-back">
+										<h3>Temporibus</h3>
+										<p>Temporibus autem quibusdam.</p>
+									</div>
+								</div>
+							</div>
 						</div>
-						<div class="sign-up2">
-							<form>
-								<input type="text" placeholder=" " required=" "/>
-							</form>
+					</li>
+				</ul>
+			</section>
+			<section class="main">
+				<ul class="ch-grid">
+					<li>
+						<div class="ch-item ch-img-4">				
+							<div class="ch-info-wrap">
+								<div class="ch-info">
+									<div class="ch-info-front ch-img-4"></div>
+									<div class="ch-info-back">
+										<h3>officiis</h3>
+										<p> Temporibus autem quibusdam.</p>
+									</div>	
+								</div>
+							</div>
 						</div>
-						<div class="clearfix"> </div>
-					</div>
-					<div class="sign-u">
-						<div class="sign-up1">
-							<h4 class="c">Email Address* :</h4>
+					</li>
+					<li>
+						<div class="ch-item ch-img-5">
+							<div class="ch-info-wrap">
+								<div class="ch-info">
+									<div class="ch-info-front ch-img-5"></div>
+									<div class="ch-info-back">
+										<h3>autem</h3>
+										<p>Temporibus autem quibusdam.</p>
+									</div>
+								</div>
+							</div>
 						</div>
-						<div class="sign-up2">
-							<form>
-								<input type="text" placeholder=" " required=" "/>
-							</form>
+					</li>
+					<li>
+						<div class="ch-item ch-img-6">
+							<div class="ch-info-wrap">
+								<div class="ch-info">
+									<div class="ch-info-front ch-img-6"></div>
+									<div class="ch-info-back">
+										<h3>Temporibus</h3>
+										<p>Temporibus autem quibusdam.</p>
+									</div>
+								</div>
+							</div>
 						</div>
-						<div class="clearfix"> </div>
-					</div>
-					<h6>Datos de la Cuenta</h6>
-					<div class="sign-u">
-						<div class="sign-up1">
-							<h4 class="d">Password* :</h4>
+					</li>
+				</ul>
+			</section>
+			<section class="main">
+				<ul class="ch-grid">
+					<li>
+						<div class="ch-item ch-img-3">				
+							<div class="ch-info-wrap">
+								<div class="ch-info">
+									<div class="ch-info-front ch-img-3"></div>
+									<div class="ch-info-back">
+										<h3>officiis</h3>
+										<p>Temporibus autem quibusdam.</p>
+									</div>	
+								</div>
+							</div>
 						</div>
-						<div class="sign-up2">
-							<form>
-								<input type="password" placeholder=" " required=" "/>
-							</form>
+					</li>
+					<li>
+						<div class="ch-item ch-img-1">
+							<div class="ch-info-wrap">
+								<div class="ch-info">
+									<div class="ch-info-front ch-img-1"></div>
+									<div class="ch-info-back">
+										<h3>autem</h3>
+										<p>Temporibus autem quibusdam.</p>
+									</div>
+								</div>
+							</div>
 						</div>
-						<div class="clearfix"> </div>
-					</div>
-					<div class="sign-u">
-						<div class="sign-up1">
-							<h4>Confirm Password* :</h4>
+					</li>
+					<li>
+						<div class="ch-item ch-img-2">
+							<div class="ch-info-wrap">
+								<div class="ch-info">
+									<div class="ch-info-front ch-img-2"></div>
+									<div class="ch-info-back">
+										<h3>Temporibus</h3>
+										<p>Temporibus autem quibusdam.</p>
+									</div>
+								</div>
+							</div>
 						</div>
-						<div class="sign-up2">
-							<form>
-								<input type="password" placeholder=" " required=" "/>
-							</form>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-					<form>
-						<input type="submit" value="Submit">
-					</form>
-				</div>
-                <script>
-
-                    var image = new Image();
-                    var canvas = document.getElementById("myCanvas");
-                    var ctx = canvas.getContext("2d");
-                    ctx.fillStyle = "black";
-                    ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-                    document.getElementById('imgInp').onchange = function handleImage(e) {
-                        var reader = new FileReader();
-                        reader.onload = function (event) { console.log('fdsf');
-                            var canvas = document.getElementById("myCanvas");
-                            var canvasContext = canvas.getContext("2d");
-                            var imgObj = new Image();
-                            imgObj.src = event.target.result;
-                            image.src = imgObj.src;
-                            console.log(imgObj.width+" "+imgObj.height);
-                            imgObj.onload = function () {
-                                canvasContext.drawImage(imgObj, 0, 0,canvas.width,canvas.height);
-                            }
-                        }
-                        reader.readAsDataURL(e.target.files[0]);
-                    }
-                </script>
+					</li>
+				</ul>
+			</section>
 			</div>
-<!-- //register -->
+<!-- //portfolio -->
 		</div>
 	</div>
 <!-- footer -->

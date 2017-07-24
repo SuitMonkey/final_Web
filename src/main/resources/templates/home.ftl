@@ -22,8 +22,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="js/jquery-1.11.1.min.js"></script>
 <!-- //js -->
 <!-- start-smoth-scrolling -->
-<script type="text/javascript" src="js/move-top.js"></script>
-<script type="text/javascript" src="js/easing.js"></script>
+
 <script type="text/javascript">
 	jQuery(document).ready(function($) {
 		$(".scroll").click(function(event){		
@@ -33,6 +32,26 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	});
 </script>
 <!-- start-smoth-scrolling -->
+
+    <script type="text/javascript">
+        $(document).ready( function (){
+            var variable = "${sesion}";
+            $('.logouts').hide();
+            $('.follow').hide();
+
+            if(variable ==="true") {
+
+                $('.logins').hide();
+                $('.logouts').show();
+
+            }
+            else {
+                $('.logins').show();
+                $('.logouts').hide();
+			}
+        });
+    </script>
+
 </head>
 	
 <body>
@@ -42,6 +61,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- header -->
 <#include "navbar.ftl">
 <!-- //header -->
+<!-- Seccion Post -->
+<#include "publicar.ftl">
+<!-- //Seccion Post -->
 <!-- header-bottom -->
 	<div class="header-bottom">
 		<div class="header-bottom-top">
@@ -74,14 +96,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 					<div class="blog-left-grid">
 						<div class="blog-left-grid-left">
-							<h3><a href="single.ftl">voluptates repudiandae sint non recusandae</a></h3>
+							<h3><a href="plantilla/single.ftl">voluptates repudiandae sint non recusandae</a></h3>
 							<p>by <span>Charlie</span> | June 29,2015 | <span>Sint</span></p>
 						</div>
 						<div class="blog-left-grid-right">
 							<a href="#" class="hvr-bounce-to-bottom non">40 Comments</a>
 						</div>
 						<div class="clearfix"> </div>
-						<a href="single.ftl"><img src="images/5.jpg" alt=" " class="img-responsive" /></a>
+						<a href="plantilla/single.ftl"><img src="images/5.jpg" alt=" " class="img-responsive" /></a>
 						<p class="para"> Itaque earum rerum hic tenetur a sapiente delectus, 
 							ut aut reiciendis voluptatibus maiores alias consequatur aut 
 							perferendis doloribus asperiores repellat.Et harum quidem rerum 
@@ -91,7 +113,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							est, omnis dolor repellendus. Temporibus autem quibusdam et 
 							aut officiis debitis.</p>
 						<div class="rd-mre">
-							<a href="single.ftl" class="hvr-bounce-to-bottom quod">Read More</a>
+							<a href="plantilla/single.ftl" class="hvr-bounce-to-bottom quod">Read More</a>
 						</div>
 					</div>
 				</div>

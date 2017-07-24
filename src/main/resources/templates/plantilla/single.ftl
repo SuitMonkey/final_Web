@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html>
 <head>
-<title>Quickly a Blogging Category Flat Bootstarp Resposive Website Template | Portfolio :: w3layouts</title>
+<title>Quickly a Blogging Category Flat Bootstarp Resposive Website Template | Single :: w3layouts</title>
 <!-- for-mobile-apps -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -33,10 +33,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	});
 </script>
 <!-- start-smoth-scrolling -->
-<!-- for portfolio -->
-<link rel="stylesheet" type="text/css" href="css/style5.css" />
-<link rel="stylesheet" type="text/css" href="css/common.css" />
-<!-- //for portfolio -->
 </head>
 	
 <body>
@@ -55,21 +51,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						  </button>
-						   <a class="navbar-brand" href="home.ftl"><span>Q</span>uickly</a>
+						   <a class="navbar-brand" href="../home.ftl"><span>Q</span>uickly</a>
 						</div>
 
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
 						 <ul class="nav navbar-nav">
-							<li class="hvr-bounce-to-bottom"><a href="home.ftl">Home</a></li>
+							<li class="hvr-bounce-to-bottom"><a href="../home.ftl">Home</a></li>
 							<li class="hvr-bounce-to-bottom"><a href="about.ftl">About</a></li>
-							<li class="hvr-bounce-to-bottom active"><a href="Portfolio.html">Portfolio</a></li>
+							<li class="hvr-bounce-to-bottom"><a href="Portfolio.html">Portfolio</a></li>
 							<li class="hvr-bounce-to-bottom"><a href="Pages.html">Pages</a></li>
 							<li class="hvr-bounce-to-bottom"><a href="contact.ftl">Contact Us</a></li>
 						  </ul>
 						  <div class="sign-in">
 							<ul>
-								<li><a href="login.ftl">Sign In </a>/</li>
+								<li><a href="../login.ftl">Sign In </a>/</li>
 								<li><a href="register.ftl">Register</a></li>
 							</ul>
 							</div>
@@ -86,140 +82,69 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<!-- //search-scripts -->
 			</div>
 <!-- //header -->
-<!-- portfolio -->
-			<div class="portfolio">
-				<h3>portfolio</h3>
-			<section class="main">
-				<ul class="ch-grid">
-					<li>
-						<div class="ch-item ch-img-1">				
-							<div class="ch-info-wrap">
-								<div class="ch-info">
-									<div class="ch-info-front ch-img-1"></div>
-									<div class="ch-info-back">
-										<h3>officiis</h3>
-										<p> Temporibus autem quibusdam.</p>
-									</div>	
-								</div>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="ch-item ch-img-2">
-							<div class="ch-info-wrap">
-								<div class="ch-info">
-									<div class="ch-info-front ch-img-2"></div>
-									<div class="ch-info-back">
-										<h3>autem</h3>
-										<p>Temporibus autem quibusdam.</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="ch-item ch-img-3">
-							<div class="ch-info-wrap">
-								<div class="ch-info">
-									<div class="ch-info-front ch-img-3"></div>
-									<div class="ch-info-back">
-										<h3>Temporibus</h3>
-										<p>Temporibus autem quibusdam.</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</li>
-				</ul>
-			</section>
-			<section class="main">
-				<ul class="ch-grid">
-					<li>
-						<div class="ch-item ch-img-4">				
-							<div class="ch-info-wrap">
-								<div class="ch-info">
-									<div class="ch-info-front ch-img-4"></div>
-									<div class="ch-info-back">
-										<h3>officiis</h3>
-										<p> Temporibus autem quibusdam.</p>
-									</div>	
-								</div>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="ch-item ch-img-5">
-							<div class="ch-info-wrap">
-								<div class="ch-info">
-									<div class="ch-info-front ch-img-5"></div>
-									<div class="ch-info-back">
-										<h3>autem</h3>
-										<p>Temporibus autem quibusdam.</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="ch-item ch-img-6">
-							<div class="ch-info-wrap">
-								<div class="ch-info">
-									<div class="ch-info-front ch-img-6"></div>
-									<div class="ch-info-back">
-										<h3>Temporibus</h3>
-										<p>Temporibus autem quibusdam.</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</li>
-				</ul>
-			</section>
-			<section class="main">
-				<ul class="ch-grid">
-					<li>
-						<div class="ch-item ch-img-3">				
-							<div class="ch-info-wrap">
-								<div class="ch-info">
-									<div class="ch-info-front ch-img-3"></div>
-									<div class="ch-info-back">
-										<h3>officiis</h3>
-										<p>Temporibus autem quibusdam.</p>
-									</div>	
-								</div>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="ch-item ch-img-1">
-							<div class="ch-info-wrap">
-								<div class="ch-info">
-									<div class="ch-info-front ch-img-1"></div>
-									<div class="ch-info-back">
-										<h3>autem</h3>
-										<p>Temporibus autem quibusdam.</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="ch-item ch-img-2">
-							<div class="ch-info-wrap">
-								<div class="ch-info">
-									<div class="ch-info-front ch-img-2"></div>
-									<div class="ch-info-back">
-										<h3>Temporibus</h3>
-										<p>Temporibus autem quibusdam.</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</li>
-				</ul>
-			</section>
+<!-- single -->
+	<div class="single-page-artical">
+		<div class="artical-content">
+			<h3>Lorem Ipsum is simply dummy text</h3>
+			<img class="img-responsive" src="images/banner.jpg" alt=" " />
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		</div>
+		<div class="artical-links">
+			<ul>
+				<li><small> </small><span>June 30, 2015</span></li>
+				<li><a href="#"><small class="admin"> </small><span>admin</span></a></li>
+				<li><a href="#"><small class="no"> </small><span>No comments</span></a></li>
+				<li><a href="#"><small class="posts"> </small><span>View posts</span></a></li>
+				<li><a href="#"><small class="link"> </small><span>permalink</span></a></li>
+			</ul>
+		</div>
+		<div class="comment-grid-top">
+			<h3>Responses</h3>
+			<div class="comments-top-top">
+				<div class="top-comment-left">
+					<a href="#"><img class="img-responsive" src="images/co.png" alt=""></a>
+				</div>
+				<div class="top-comment-right">
+					<ul>
+						<li><span class="left-at"><a href="#">Admin</a></span></li>
+						<li><span class="right-at">June 30, 2015 at 10.30am</span></li>
+						<li><a class="reply" href="#">REPLY</a></li>
+					</ul>
+				<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.The point of using Lorem Ipsum is that it has a more-or-less </p>
+				</div>
+				<div class="clearfix"> </div>
 			</div>
-<!-- //portfolio -->
+			<div class="comments-top-top top-grid-comment">
+				<div class="top-comment-left">
+					<a href="#"><img class="img-responsive" src="images/co.png" alt=""></a>
+				</div>
+				<div class="top-comment-right">
+					<ul>
+						<li><span class="left-at"><a href="#">Admin</a></li>
+						<li><span class="right-at">June 30, 2015 at 10.30am</span></li>
+						<li><a class="reply" href="#">REPLY</a></li>
+					</ul>
+				<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.The point of using Lorem Ipsum is that it has a more-or-less </p>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>			
+		<div class="artical-commentbox">
+			<h3>leave a comment</h3>
+			<div class="table-form">
+				<form>
+					<input type="text" class="textbox" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}">
+					<input type="text" class="textbox" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}">
+					<input type="text" class="textbox" value="Phone number" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Phone number';}">
+					<textarea value="Message:" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message';}">Message</textarea>	
+					<input type="submit" value="Send">
+				</form>
+			</div>
+		</div>	
+	</div>
+<!-- single -->
 		</div>
 	</div>
 <!-- footer -->

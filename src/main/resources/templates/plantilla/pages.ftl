@@ -51,13 +51,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						  </button>
-						   <a class="navbar-brand" href="home.ftl"><span>Q</span>uickly</a>
+						   <a class="navbar-brand" href="../home.ftl"><span>Q</span>uickly</a>
 						</div>
 
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
 						 <ul class="nav navbar-nav">
-							<li class="hvr-bounce-to-bottom"><a href="home.ftl">Home</a></li>
+							<li class="hvr-bounce-to-bottom"><a href="../home.ftl">Home</a></li>
 							<li class="hvr-bounce-to-bottom"><a href="about.ftl">About</a></li>
 							<li class="hvr-bounce-to-bottom"><a href="Portfolio.html">Portfolio</a></li>
 							<li class="hvr-bounce-to-bottom active"><a href="Pages.html">Pages</a></li>
@@ -65,7 +65,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						  </ul>
 						  <div class="sign-in">
 							<ul>
-								<li><a href="login.ftl">Sign In </a>/</li>
+								<li><a href="../login.ftl">Sign In </a>/</li>
 								<li><a href="register.ftl">Register</a></li>
 							</ul>
 							</div>
