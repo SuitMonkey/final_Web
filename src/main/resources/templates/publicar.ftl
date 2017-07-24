@@ -3,7 +3,7 @@
         <div class="loginmodal-container">
             <h1>Creando Articulo</h1><br>
             <canvas id="myCanvas" width="500" height="500"></canvas>
-            <form method="post" enctype="multipart/form-data" action="/home">
+            <form method="post" enctype="multipart/form-data" action="/">
             <#--<img id="blah" src="img/placeHolder.png" alt="your image" />-->
                 <input type='file' id="imgInp" name="imgInp"/>
             <#--<input type = "hidden" name = "dataImagen" value = "true">-->

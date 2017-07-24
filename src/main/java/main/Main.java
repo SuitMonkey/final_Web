@@ -153,7 +153,7 @@ public static void main(String [] args)
             }
 
         }
-        response.redirect("/home");
+        response.redirect("/");
         return null;
     }, freeMarkerEngine);
 
