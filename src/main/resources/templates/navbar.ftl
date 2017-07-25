@@ -16,7 +16,7 @@
             <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li class="hvr-bounce-to-bottom active"><a href="/">Inicio</a></li>
-                    <li class="hvr-bounce-to-bottom">
+                    <li id="perf" class="hvr-bounce-to-bottom">
                         <a href="/perfil" id="chatt">Perfil</a>
                     </li>
                     <li class="hvr-bounce-to-bottom">

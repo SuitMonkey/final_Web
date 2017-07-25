@@ -39,13 +39,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             $('.logouts').hide();
             $('.follow').hide();
             $('#post').hide();
+            $('#perf').hide();
 
             if(variable ==="true") {
 
                 $('.logins').hide();
                 $('.logouts').show();
                 $('#post').show();
-
+                $('#perf').show();
             }
             else {
                 $('.logins').show();
@@ -140,7 +141,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</div>
 
 <script>
-    $(".pagination").click(function () {
+    $(".pagination").clic>
+function () {
 //            alert($(this).html());
         $.ajax({
             type: 'POST',
