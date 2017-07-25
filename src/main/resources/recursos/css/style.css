@@ -37,6 +37,12 @@ body a:hover{
 	background:url(../images/pattern.jpg) 0px 0px;
 	min-height:600px;
 }
+
+.liks{
+	border: none;
+	width:20px;
+	background: transparent;
+}
 /*-- //banner-body --*/
 /*-- header --*/
 .navbar-default {

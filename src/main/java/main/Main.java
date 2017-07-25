@@ -432,12 +432,6 @@ public static void main(String [] args)
             art.getLikes().add(like);
             LikeAQueries.getInstancia().crear(like);
         }
-        else if ("dislikeA".equals(mode)) {
-
-            LikeA like = new LikeA(false,art,sesion.attribute("currentUser"));
-            art.getLikes().add(like);
-            LikeAQueries.getInstancia().crear(like);
-        }
 
         response.redirect("/articulos?id="+art.getId());
 
@@ -569,7 +563,6 @@ public static void main(String [] args)
 
     get("/listado", (request, response) -> {
         Map<String, Object> attributes = new HashMap<>();
-//            attributes.put("usuarios", UsuarioQueries.getInstancia().findAll());
         Session session = request.session(true);
         Usuario us = session.attribute("currentUser");
         List<Usuario> temp = UsuarioQueries.getInstancia().findAll();
@@ -688,7 +681,7 @@ public static void main(String [] args)
     get("/contact", (request, response) -> {
         Map<String, Object> attributes = new HashMap<>();
 
-        return new ModelAndView(attributes, "contact.ftl");
+        return new ModelAndView(attributes, "plantilla/single.ftl");
     }, freeMarkerEngine);
 
 

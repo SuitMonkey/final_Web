@@ -91,6 +91,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="rd-mre">
 								<a href="/articulos?id=${articulo.getId()}" class="hvr-bounce-to-bottom quod">Leer más</a>
 							</div>
+						<br>
+						<hr>
 						</#list>
 					</#if>
 					</div>
