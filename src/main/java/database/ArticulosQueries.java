@@ -4,6 +4,7 @@ import main.Main;
 import modelo.Articulo;
 import modelo.Etiqueta;
 import modelo.LikeA;
+import modelo.Usuario;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
@@ -38,6 +39,25 @@ public class ArticulosQueries extends Manejador<Articulo> {
                 .setFirstResult(Main.pa)
                 .setMaxResults(5);
         List<Articulo> lista = query.getResultList();
+        return lista;
+    }
+
+    public List<Articulo> findLimitedSortedFollowed(Usuario us){
+        List<Articulo> lista = new ArrayList<>();
+        EntityManager em = getEntityManager();
+        for (Usuario seguido: us.getFollow()) {
+            Query query = em.createQuery("SELECT a FROM Articulo a WHERE AUTOR_USERNAME ='"+seguido.getUsername()+"'order by  a.fecha desc")
+                    .setFirstResult(Main.pa)
+                    .setMaxResults(5);
+            lista.addAll(query.getResultList());
+        }
+        return lista;
+    }
+    public List<Articulo> findAllBy(Usuario us){
+        EntityManager em = getEntityManager();
+            Query query = em.createQuery("SELECT a FROM Articulo a WHERE AUTOR_USERNAME ='"+us.getUsername()+"'order by  a.fecha desc");
+        List<Articulo> lista  = query.getResultList();
+        System.out.println(lista.size());
         return lista;
     }
 

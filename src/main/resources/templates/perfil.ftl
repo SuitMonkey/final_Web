@@ -55,8 +55,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="footer-grd-left">
 							<img src="${user.getFoto()}" class="img-responsive">
 						</div>
+                        <div class="clearfix"> </div>
 						<div class="footer-grd-left">
-							<p>${user.getDescription()}	</p>
+							<p>"${user.getDescription()}"</p>
 						</div>
 					</div>
                     <div class="clearfix"> </div>
@@ -73,6 +74,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <aquivanlosposts>
 
 						</aquivanlosposts>
+						<#if articulos??>
+							<#list articulos as articulo>
+
+                                <div class="footer-grd">
+                                    <a href="/articulos?id=${articulo.getId()}">
+                                    <img src="${articulo.getFoto()}" class="img-responsive" alt=" " /></a>
+                                </div>
+							</#list>
+						<#else>
+						<h3>No hay publicaciones que mostrar</h3>
+						</#if>
 						<div class="clearfix"> </div>
                     </div>
                     <div class="clearfix"> </div>

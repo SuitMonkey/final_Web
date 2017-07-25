@@ -73,8 +73,13 @@ public static void main(String [] args)
 
         int pagina = 1;
         paginacion(ArticulosQueries.getInstancia().findAllSorted(),pagina);
-        List<Articulo> ar = ArticulosQueries.getInstancia().findLimitedSorted();
-
+        List<Articulo> ar;
+        if(session.attribute("currentUser") == null) {
+            ar = ArticulosQueries.getInstancia().findLimitedSorted();
+        }else {
+            ar = ArticulosQueries.getInstancia().findLimitedSortedFollowed((Usuario) attributes.get("user"));
+        }
+        System.out.println(ar.size());
         attributes.put("articulos",ar);
 
 
@@ -103,7 +108,6 @@ public static void main(String [] args)
             byte encoded[] = new byte[(int) request.raw().getPart("imgInp").getSize()];
             is.read(encoded);
             file64 = "data:image/png;base64,"+Base64.getEncoder().encodeToString(encoded);
-
         }
         System.out.println("");
         Session sesion = request.session(true);
@@ -476,6 +480,16 @@ public static void main(String [] args)
         Session session =  request.session(true);
         Usuario actual = session.attribute("currentUser");
         attributes.put("user",actual);
+
+        List<Articulo> ar;
+        if(session.attribute("currentUser") != null) {
+            ar = ArticulosQueries.getInstancia().findAllBy((Usuario) attributes.get("user"));
+        }else{
+            ar = new ArrayList<>();
+        }
+        System.out.println(ar.size());
+        attributes.put("articulos",ar);
+
         return new ModelAndView(attributes, "perfil.ftl");
     }, freeMarkerEngine);
 
@@ -533,7 +547,9 @@ public static void main(String [] args)
     post("/validacion", (request, response) -> {
         Map<String, Object> attributes = new HashMap<>();
         Session session = request.session(true);
-
+        if (session.attribute("sesion") == null){
+            attributes.put("sesion",false);
+        }
         if(session.attribute("sesion"))
         {
             Usuario u = UsuarioQueries.getInstancia().find(request.queryParams("user"));
