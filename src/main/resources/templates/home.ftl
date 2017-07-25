@@ -38,11 +38,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             var variable = "${sesion}";
             $('.logouts').hide();
             $('.follow').hide();
+            $('#post').hide();
 
             if(variable ==="true") {
 
                 $('.logins').hide();
                 $('.logouts').show();
+                $('#post').show();
 
             }
             else {
@@ -87,6 +89,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div>
 							<div class="clearfix"> </div>
                             <img src="${articulo.getFoto()}" atl=" " height="500" width="500" class="img-responsive">
+							<p>${articulo.getTagged()}</p>
 							<p class="para"> ${articulo.getDescripcion()}</p>
 							<div class="rd-mre">
 								<a href="/articulos?id=${articulo.getId()}" class="hvr-bounce-to-bottom quod">Leer más</a>
@@ -95,28 +98,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<hr>
 						</#list>
 					</#if>
-					</div>
-					<div class="blog-left-grid">
-						<div class="blog-left-grid-left">
-							<h3><a href="plantilla/single.ftl">voluptates repudiandae sint non recusandae</a></h3>
-							<p>by <span>Charlie</span> | June 29,2015 | <span>Sint</span></p>
-						</div>
-						<div class="blog-left-grid-right">
-							<a href="#" class="hvr-bounce-to-bottom non">40 Comments</a>
-						</div>
-						<div class="clearfix"> </div>
-						<a href="plantilla/single.ftl"><img src="images/5.jpg" alt=" " class="img-responsive" /></a>
-						<p class="para"> Itaque earum rerum hic tenetur a sapiente delectus, 
-							ut aut reiciendis voluptatibus maiores alias consequatur aut 
-							perferendis doloribus asperiores repellat.Et harum quidem rerum 
-							facilis est et expedita distinctio. Nam libero tempore, cum 
-							soluta nobis est eligendi optio cumque nihil impedit quo minus 
-							id quod maxime placeat facere possimus, omnis voluptas assumenda 
-							est, omnis dolor repellendus. Temporibus autem quibusdam et 
-							aut officiis debitis.</p>
-						<div class="rd-mre">
-							<a href="plantilla/single.ftl" class="hvr-bounce-to-bottom quod">Read More</a>
-						</div>
 					</div>
 				</div>
 

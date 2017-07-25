@@ -22,7 +22,7 @@
                     <li class="hvr-bounce-to-bottom">
                         <a href="/listado" id="listaU">Listado Users</a>
                     </li>
-                    <li class="hvr-bounce-to-bottom">
+                    <li id="post" class="hvr-bounce-to-bottom">
                         <a href="#" data-toggle="modal" data-target="#login-modal"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Post</a>
                     </li>
 

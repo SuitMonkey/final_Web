@@ -24,8 +24,8 @@ public class Usuario implements Serializable{
     private boolean autor;
     private String description;
 
-    @OneToMany ( mappedBy = "autor",fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
-    private List<Articulo> articulos;
+//    @OneToMany ( mappedBy = "autor",fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
+//    private List<Articulo> articulos;
     @OneToMany ( mappedBy = "autor",fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
     private List<Comentario> comentarios;
     @OneToMany(mappedBy = "usuario",fetch = FetchType.EAGER,orphanRemoval = true,cascade = CascadeType.REMOVE)
@@ -77,20 +77,20 @@ public class Usuario implements Serializable{
         this.likesC = likesC;
     }
 
-    public List<Articulo> getArticulos() {
-        return articulos;
-    }
-
-    public void setArticulos(List<Articulo> articulos) {
-        this.articulos = articulos;
-    }
-
-    public void addArticulo(Articulo art) {
-        this.articulos.add(art);
-        if (art.getAutor() != this) {
-            art.setAutor(this);
-        }
-    }
+//    public List<Articulo> getArticulos() {
+//        return articulos;
+//    }
+//
+//    public void setArticulos(List<Articulo> articulos) {
+//        this.articulos = articulos;
+//    }
+//
+//    public void addArticulo(Articulo art) {
+//        this.articulos.add(art);
+//        if (art.getAutor() != this) {
+//            art.setAutor(this);
+//        }
+//    }
     public void addLikeA(LikeA la) {
         this.likesA.add(la);
         if (la.getUsuario() != this) {

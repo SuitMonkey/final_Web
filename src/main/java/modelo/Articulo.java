@@ -18,7 +18,6 @@ public class Articulo implements Serializable{
     private long id;
     @Column(columnDefinition = "TEXT")
     private String foto;
-//        @Column(length = 1024*5)
     private String descripcion;
     @ManyToOne
     private Usuario autor;
@@ -30,12 +29,14 @@ public class Articulo implements Serializable{
     private List<Etiqueta> listaEtiqueta;
     @OneToMany(mappedBy = "articulo",fetch = FetchType.EAGER,cascade = CascadeType.REMOVE)
     private List<LikeA> likes;
+    @Column(columnDefinition = "TEXT")
+    private String tagged;
 
     public Articulo(){
 
     }
 
-    public Articulo(String foto, String descripcion, Usuario autor, List<Comentario> listaComentario, List<Etiqueta> listaEtiqueta, String fecha,List<LikeA> likes) {
+    public Articulo(String foto, String descripcion, Usuario autor, List<Comentario> listaComentario, List<Etiqueta> listaEtiqueta, String fecha,List<LikeA> likes,String tagged) {
         this.foto = foto;
         this.descripcion = descripcion;
         this.autor = autor;
@@ -43,6 +44,7 @@ public class Articulo implements Serializable{
         this.listaComentario = listaComentario;
         this.listaEtiqueta = listaEtiqueta;
         this.likes = likes;
+        this.tagged = tagged;
     }
 
 

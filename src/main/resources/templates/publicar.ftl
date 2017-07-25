@@ -1,17 +1,17 @@
 <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
     <div class="modal-dialog">
         <div class="loginmodal-container">
-            <h1>Creando Articulo</h1><br>
+            <h1 style="color: white">Creando Articulo</h1><br>
             <canvas id="myCanvas" width="500" height="500"></canvas>
             <form method="post" enctype="multipart/form-data" action="/">
-            <#--<img id="blah" src="img/placeHolder.png" alt="your image" />-->
                 <input type='file' id="imgInp" name="imgInp"/>
-            <#--<input type = "hidden" name = "dataImagen" value = "true">-->
                 <textarea type="text-area" style="height: 150px;" class="form-control" row="4" name="area-articulo" id="area-articulo" placeholder="Texto..."></textarea>
                 <br>
                 <textarea type="tags-area" style="height: 50px;" class="form-control" row="4" name="area-etiqueta" id="area-etiqueta" placeholder="Etiquetas,..."></textarea>
                 <br>
-                <input type="submit" name="crearArt" id="btn-crearArt" class="crearArt loginmodal-submit" value="Aceptar">
+                <br>
+                <textarea type="tags-area" style="height: 50px;" class="form-control" row="4" name="tagged" id="tagged" placeholder="taggeados,..."></textarea>
+                <input type="submit" name="crearArt" id="btn-crearArt" class="crearArt" value="Aceptar">
             </form>
             <script>
 

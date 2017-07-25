@@ -37,6 +37,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             var variable = "${sesion}";
             $('.logouts').hide();
             $('.follow').hide();
+            $('#post').hide();
 
             if(variable ==="true") {
 
@@ -103,11 +104,29 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                 </li>
                             </#if>
                         </#if>
-                        <li><a href="#"></a></li>
-                        <li><a href="#"></a></li>
+                        <li class="modificar">
+                            <a href="#" data-toggle="modal" data-target="#login-modal"><span>Editar</span></a>
+                        </li>
+                        <li class="modificar">
+                            <form action ="/" method = "post">
+                                <input type = "hidden" name = "eliminarArt" value = "true">
+                                <a href="#"><button class="btn btn-default" style="background: none;border: none;margin: 0;padding: 0;" name="elim" value="${articulo.getId()}">Eliminar</button></a>
+                            </form>
+                        </li>
                         <li><a href="#"></a></li>
                     </ul>
                 </div>
+
+                <script>
+                    $(document).ready(function (d) {
+                        $('.modificar').hide();
+                        <#if conectado??>
+                            if('${conectado.getNombre()}' === '${articulo.getAutor().getNombre()}'){
+                                $('.modificar').show();
+                            }
+                        </#if>
+                    })
+                </script>
 
                 <div class="comment-grid-top">
                     <h3>Comentarios</h3>
@@ -122,11 +141,21 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                         <li><span class="left-at"><a>${coment.getAutor().getNombre()} </a></span></li>
                                         <li><span class="right-at">---</span></li>
 
-                                        <li>
+                                        <script type="text/javascript">
+                                            $(document).ready(function (d) {
+                                                $('#este').hide();
+                                                <#if conectado??>
+                                                    if('${conectado.getNombre()}' === '${coment.getAutor().getNombre()}' || '${conectado.getNombre()}' === '${articulo.getAutor().getNombre()}'){
+                                                        $('#este').show();
+                                                    }
+                                                </#if>
+                                            })
+                                        </script>
+                                        <li id="este">
                                             <form action="/articulos" method="post" >
                                                 <input type ="hidden" name = "eliminarComentarioV" value = "${coment.getId()}">
                                                 <input type="hidden" name="idArticulo" value="${id}">
-                                                <input name = "eliminarComentario" type="submit" class="reply" value = "Eliminar">
+                                                <a class="reply"><input name = "eliminarComentario" style="background: none;border: none;margin: 0;padding: 0;" type="submit" value = "Eliminar"></a>
                                             </form>
                                         </li>
                                     </ul>
@@ -157,6 +186,29 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <!-- single -->
     </div>
 </div>
+
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+        <div class="loginmodal-container">
+            <h1>Editando Articulo</h1><br>
+            <form action="/articulos" method="post" enctype="multipart/form-data">
+                <img src="${articulo.getFoto()}" height="500" width="500" class="img-responsive">
+                <input type = "hidden" name = "editarArt" value = "true">
+                <input type = "hidden" name = "foto" value ="${articulo.getFoto()}">
+                <input type = "hidden" name = "idArticulo" value = "${articulo.getId()}">
+            <#--<input type="text" name="titulo" value="${articulo.getTitulo()}">-->
+                <textarea type="text-area" style="height: 150px;" class="form-control" row="4" name="area-articulo" >${articulo.getDescripcion()}</textarea>
+                <br>
+                <textarea type="tags-area" style="height: 50px;" class="form-control" row="4" name="area-etiqueta" ><#list etiquetas as etiqs>${etiqs.getEtiqueta()}, </#list></textarea>
+                <br>
+                <input type="submit" name="login" class="login loginmodal-submit" value="Aceptar">
+            </form>
+
+        </div>
+    </div>
+</div>
+
+
 <!-- footer -->
 <div class="footer">
     <div class="container">

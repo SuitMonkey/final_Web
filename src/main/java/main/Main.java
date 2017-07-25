@@ -26,8 +26,8 @@ import static spark.Spark.*;
 
 import static spark.debug.DebugScreen.enableDebugScreen;
 
-//TODO: Teminar de arreglar el main
 public class Main {
+
     private static final String SESSION_NAME = "Sesion";
     public final static String ACCEPT_TYPE = "application/json";
     public final static int  BAD_REQUEST = 400;
@@ -36,6 +36,7 @@ public class Main {
     public static List<Chat> usuariosConectados = new ArrayList<>();
 
 public static void main(String [] args) throws Exception {
+
     SoapArranque.init();
     File uploadDir = new File("upload");
     uploadDir.mkdir();
@@ -66,7 +67,6 @@ public static void main(String [] args) throws Exception {
     });
 
 
-
     //listar todos los estudiantes.
     get("/articulosRange/:year1/:mes1/:dia1/:year2/:mes2/:dia2",(request, response) -> {
 
@@ -88,10 +88,6 @@ public static void main(String [] args) throws Exception {
 
         return articulos2;
     }, JsonUtilidades.json());
-
-
-
-
 
     get("/", (request, response) -> {
         Map<String, Object> attributes = new HashMap<>();
@@ -155,22 +151,37 @@ public static void main(String [] args) throws Exception {
         System.out.println(gson.toJson(request.queryParams()));
         request.attribute("org.eclipse.jetty.multipartConfig", new MultipartConfigElement("/temp"));
         String file64 = "";
-        try (InputStream is = request.raw().getPart("imgInp").getInputStream()) {
-            byte encoded[] = new byte[(int) request.raw().getPart("imgInp").getSize()];
-            is.read(encoded);
-            file64 = "data:image/png;base64,"+Base64.getEncoder().encodeToString(encoded);
+
+        String elimArt = request.queryParams("eliminarArt");
+
+        if(elimArt == null){
+            elimArt = "false";
         }
-        System.out.println("");
+
+        if(!elimArt.equals("true")){
+            try (InputStream is = request.raw().getPart("imgInp").getInputStream()) {
+                byte encoded[] = new byte[(int) request.raw().getPart("imgInp").getSize()];
+                is.read(encoded);
+                file64 = "data:image/png;base64,"+Base64.getEncoder().encodeToString(encoded);
+            }
+        }
+
+        if(elimArt.equals("false")){
+            elimArt = null;
+        }
+
+
+
         Session sesion = request.session(true);
         Map<String, Object> attributes = new HashMap<>();
         System.out.println(request.queryParams().size());
 
+        String insertArt = request.queryParams("crearArt");
         System.out.println(request.queryParams("titulo"));
         System.out.println(request.queryParams("area-articulo"));
         System.out.println(request.queryParams("area-etiqueta"));
 
-        String insertArt = request.queryParams("crearArt");
-        String elimArt = request.queryParams("eliminarArt");
+
 
         String busqueda = request.queryParams("busqueda");
         if(busqueda != null){
@@ -187,6 +198,7 @@ public static void main(String [] args) throws Exception {
             String titulo = request.queryParams("titulo");
             String texto = request.queryParams("area-articulo");
             String etiquetas = request.queryParams("area-etiqueta");
+            String tagged = request.queryParams("tagged");
             ArrayList<Etiqueta> etiq = new ArrayList<Etiqueta>();
             for (String eti : etiquetas.split(",")) {
                 etiq.add(new Etiqueta(eti));
@@ -194,7 +206,7 @@ public static void main(String [] args) throws Exception {
             }
 
 
-            Articulo art = new Articulo( file64, texto, sesion.attribute("currentUser"), new ArrayList<Comentario>(), etiq,getCurrentTime(),new ArrayList<LikeA>());
+            Articulo art = new Articulo( file64, texto, sesion.attribute("currentUser"), new ArrayList<Comentario>(), etiq,getCurrentTime(),new ArrayList<LikeA>(),tagged);
             ArticulosQueries.getInstancia().crear(art);
             for (String eti : etiquetas.split(",")) {
                 EtiquetaQueries.getInstancia().crear(new Etiqueta(eti, (Articulo) ArticulosQueries.getInstancia().find(art.getId())));
@@ -410,6 +422,7 @@ public static void main(String [] args) throws Exception {
 
         attributes.put("totalLA",totalLA);
         attributes.put("totalDA",totalDA);
+        attributes.put("conectado",sesion.attribute ("currentUser"));
 
 
         return new ModelAndView(attributes, "articulo.ftl");
@@ -650,12 +663,22 @@ public static void main(String [] args) throws Exception {
 
 
         for (Usuario nF : temp){
-            for(Usuario f : seguidos){
-                if(!(nF.getUsername().equals(f.getUsername())) && !(nF.getUsername().equals(us.getUsername()))){
+            if(!(seguidos.size() == 0))
+            {
+                for(Usuario f : seguidos){
+                    if(!(nF.getUsername().equals(f.getUsername())) && !(nF.getUsername().equals(us.getUsername()))){
+                        choosen.add(nF);
+                    }
+                }
+            }else {
+                if(!(nF.getUsername().equals(us.getUsername()))){
                     choosen.add(nF);
                 }
             }
+
         }
+
+
 
             attributes.put("follows", seguidos);
             attributes.put("usuarios", choosen);
@@ -765,8 +788,7 @@ public static void main(String [] args) throws Exception {
 
 }
 
-public static List<Articulo> paginacion(List<Articulo> la, int pagina)
-{
+public static List<Articulo> paginacion(List<Articulo> la, int pagina){
     List<Articulo> articulosPagina = new ArrayList<>();
 
     int rate = 5 *(pagina-1);
@@ -777,7 +799,7 @@ public static List<Articulo> paginacion(List<Articulo> la, int pagina)
     return articulosPagina;
 }
 
-    public static String getCurrentTime() {
+public static String getCurrentTime() {
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         Date current = new Date();
         return dateFormat.format(current);
@@ -832,9 +854,11 @@ public static void enviarMensajeAlCliente(String cliente,String mensaje){
         }
     }*/
 }
-    private static void manejarError(int codigo, Exception exception, Request request, Response response ){
+
+private static void manejarError(int codigo, Exception exception, Request request, Response response ){
         response.status(codigo);
         response.body(JsonUtilidades.toJson(new ErrorRespuesta(100, exception.getMessage())));
         exception.printStackTrace();
     }
+
 }
