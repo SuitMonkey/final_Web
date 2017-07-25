@@ -23,7 +23,7 @@ public class Articulo implements Serializable{
     @ManyToOne
     private Usuario autor;
     @OrderBy
-    private Date fecha;
+    private String fecha;
     @OneToMany(mappedBy = "articulo",fetch=FetchType.EAGER,cascade = CascadeType.REMOVE)
     private List<Comentario> listaComentario;
     @OneToMany(mappedBy = "articulo",fetch=FetchType.EAGER,cascade = CascadeType.REMOVE)
@@ -35,13 +35,11 @@ public class Articulo implements Serializable{
 
     }
 
-    public Articulo(String foto, String descripcion, Usuario autor, List<Comentario> listaComentario, List<Etiqueta> listaEtiqueta, List<LikeA> likes) {
+    public Articulo(String foto, String descripcion, Usuario autor, List<Comentario> listaComentario, List<Etiqueta> listaEtiqueta, String fecha,List<LikeA> likes) {
         this.foto = foto;
         this.descripcion = descripcion;
         this.autor = autor;
-        fecha = new Date();
-        java.sql.Date fechasql = new java.sql.Date(fecha.getTime());
-        this.setFecha(fechasql);
+        this.fecha = fecha;
         this.listaComentario = listaComentario;
         this.listaEtiqueta = listaEtiqueta;
         this.likes = likes;

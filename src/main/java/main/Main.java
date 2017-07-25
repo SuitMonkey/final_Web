@@ -4,28 +4,39 @@ package main;
  */
 
 import com.google.gson.Gson;
+import com.google.gson.JsonSyntaxException;
 import database.*;
 import freemarker.template.Configuration;
 import modelo.*;
+import soap.SoapArranque;
 import spark.ModelAndView;
+import spark.Request;
+import spark.Response;
 import spark.Session;
 import spark.template.freemarker.FreeMarkerEngine;
+import utilidades.JsonUtilidades;
 
 import javax.servlet.MultipartConfigElement;
 import java.io.File;
 import java.io.InputStream;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 import static spark.Spark.*;
+
 import static spark.debug.DebugScreen.enableDebugScreen;
 
 //TODO: Teminar de arreglar el main
 public class Main {
-public static int pa = 0;
-public static List<Chat> usuariosConectados = new ArrayList<>();
+    private static final String SESSION_NAME = "Sesion";
+    public final static String ACCEPT_TYPE = "application/json";
+    public final static int  BAD_REQUEST = 400;
+    public final static int  ERROR_INTERNO = 500;
+    public static int pa = 0;
+    public static List<Chat> usuariosConectados = new ArrayList<>();
 
-public static void main(String [] args)
-{
+public static void main(String [] args) throws Exception {
+    SoapArranque.init();
     File uploadDir = new File("upload");
     uploadDir.mkdir();
     staticFileLocation("recursos");
@@ -40,6 +51,46 @@ public static void main(String [] args)
 
     //Administradores
 //        UsuarioQueries.getInstancia().crear(new Usuario("j", "Jesus Henriquez", "1234"));
+
+    //Manejo de Excepciones.
+    exception(IllegalArgumentException.class, (exception, request, response) -> {
+        manejarError(Main.BAD_REQUEST,exception, request, response);
+    });
+
+    exception(JsonSyntaxException.class, (exception, request, response) -> {
+        manejarError(Main.BAD_REQUEST,exception, request, response);
+    });
+
+    exception(Exception.class, (exception, request, response) -> {
+        manejarError(Main.ERROR_INTERNO,exception, request, response);
+    });
+
+
+
+    //listar todos los estudiantes.
+    get("/articulosRange/:year1/:mes1/:dia1/:year2/:mes2/:dia2",(request, response) -> {
+
+        String date1= request.params("year1")+"/"+request.params("mes1")+"/"+request.params("dia1");
+        String date2= request.params("year2")+"/"+request.params("mes2")+"/"+request.params("dia2");
+
+        System.out.println(date1);
+        System.out.println(date2);
+
+        ArrayList<Articulo> articulos = ArticulosQueries.getInstancia().findArticuloByDateRange(date1, date2);
+        ArrayList<ArticulosRest> articulos2= new ArrayList<>();
+
+        for(Articulo a : articulos){
+            ArticulosRest ar = new ArticulosRest(a.getDescripcion(),a.getFoto(),a.getFecha(),a.getAutor().getNombre());
+            articulos2.add(ar);
+        }
+        System.out.println("from: "+date1+"to: "+date2);
+
+
+        return articulos2;
+    }, JsonUtilidades.json());
+
+
+
 
 
     get("/", (request, response) -> {
@@ -143,7 +194,7 @@ public static void main(String [] args)
             }
 
 
-            Articulo art = new Articulo( file64, texto, sesion.attribute("currentUser"), new ArrayList<Comentario>(), etiq,new ArrayList<LikeA>());
+            Articulo art = new Articulo( file64, texto, sesion.attribute("currentUser"), new ArrayList<Comentario>(), etiq,getCurrentTime(),new ArrayList<LikeA>());
             ArticulosQueries.getInstancia().crear(art);
             for (String eti : etiquetas.split(",")) {
                 EtiquetaQueries.getInstancia().crear(new Etiqueta(eti, (Articulo) ArticulosQueries.getInstancia().find(art.getId())));
@@ -721,6 +772,13 @@ public static List<Articulo> paginacion(List<Articulo> la, int pagina)
     return articulosPagina;
 }
 
+    public static String getCurrentTime() {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        Date current = new Date();
+        return dateFormat.format(current);
+
+    }
+
 public static double getCantPag(int size)
 {
     return Math.ceil(  ((double)size)/ 5 );
@@ -769,4 +827,9 @@ public static void enviarMensajeAlCliente(String cliente,String mensaje){
         }
     }*/
 }
+    private static void manejarError(int codigo, Exception exception, Request request, Response response ){
+        response.status(codigo);
+        response.body(JsonUtilidades.toJson(new ErrorRespuesta(100, exception.getMessage())));
+        exception.printStackTrace();
+    }
 }
