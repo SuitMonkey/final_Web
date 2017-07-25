@@ -48,13 +48,13 @@ public class Articulo implements Serializable{
     }
 
 
-    public void addLikeA(LikeA like) {
+    /*public void addLikeA(LikeA like) {
         this.likes.add(like);
         if (like.getArticulo() != this) {
             like.setArticulo(this);
             //ArticuloQueries.getInstancia().editar(this);
         }
-    }
+    }*/
 
     public void addEtiqueta(Etiqueta et) {
         this.listaEtiqueta.add(et);

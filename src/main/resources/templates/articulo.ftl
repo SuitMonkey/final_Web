@@ -103,9 +103,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                 </li>
                             </#if>
                         </#if>
-                        <li><a href="#"></li>
-                        <li><a href="#"></li>
-                        <li><a href="#"></li>
+                        <li><a href="#"></a></li>
+                        <li><a href="#"></a></li>
+                        <li><a href="#"></a></li>
                     </ul>
                 </div>
 
@@ -119,9 +119,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                 </div>
                                 <div class="top-comment-right">
                                     <ul>
-                                        <li><span class="left-at"><a href="#">${coment.getAutor().getUsername()}</a></span></li>
-                                        <li><span class="right-at">June 30, 2015 at 10.30am</span></li>
-                                        <li><a class="reply" href="#">REPLY</a></li>
+                                        <li><span class="left-at"><a>${coment.getAutor().getNombre()} </a></span></li>
+                                        <li><span class="right-at">---</span></li>
+
+                                        <li>
+                                            <form action="/articulos" method="post" >
+                                                <input type ="hidden" name = "eliminarComentarioV" value = "${coment.getId()}">
+                                                <input type="hidden" name="idArticulo" value="${id}">
+                                                <input name = "eliminarComentario" type="submit" class="reply" value = "Eliminar">
+                                            </form>
+                                        </li>
                                     </ul>
                                     <p>${coment.getComentario()}</p>
                                 </div>
@@ -130,16 +137,20 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         </#list>
                     </#if>
                 </div>
-                <div class="artical-commentbox">
-                    <h3>Deja un comentario:</h3>
-                    <div class="table-form">
-                        <form method="post" action="/articulos">
-                            <textarea name="comentario"></textarea>
-                            <input type="hidden" name="idArticulo" value="${id}">
-                            <input type="submit" value="Listo!">
-                        </form>
-                    </div>
-                </div>
+                <#if sesion??>
+                    <#if sesion != "false">
+                        <div class="artical-commentbox">
+                            <h3>Deja un comentario:</h3>
+                            <div class="table-form">
+                                <form method="post" action="/articulos">
+                                    <textarea name="comentario" placeholder="Comentario"></textarea>
+                                    <input type="hidden" name="idArticulo" value="${id}">
+                                    <input type="submit" value="Listo!">
+                                </form>
+                            </div>
+                        </div>
+                    </#if>
+                </#if>
             </#if>
 
         </div>

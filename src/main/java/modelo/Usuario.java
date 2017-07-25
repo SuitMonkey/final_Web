@@ -35,10 +35,6 @@ public class Usuario implements Serializable{
     @ManyToMany(fetch = FetchType.EAGER)
     private Set<Usuario> follow;
 
-//    @Override
-//    public String toString(){
-//        return "TMM";
-//    }
 
     public Usuario(){
 

@@ -74,11 +74,11 @@ public static void main(String [] args)
         int pagina = 1;
         paginacion(ArticulosQueries.getInstancia().findAllSorted(),pagina);
         List<Articulo> ar;
-        if(session.attribute("currentUser") == null) {
-            ar = ArticulosQueries.getInstancia().findLimitedSorted();
-        }else {
-            ar = ArticulosQueries.getInstancia().findLimitedSortedFollowed((Usuario) attributes.get("user"));
-        }
+//        if(session.attribute("currentUser") == null) {
+            ar = ArticulosQueries.getInstancia().findLimitedSorted((Usuario) attributes.get("user"));
+//        }else {
+//            ar = ArticulosQueries.getInstancia().findLimitedSortedFollowed((Usuario) attributes.get("user"));
+//        }
         System.out.println(ar.size());
         attributes.put("articulos",ar);
 
@@ -190,7 +190,7 @@ public static void main(String [] args)
 
         //List<Articulo> articulos = paginacion(ArticulosQueries.getInstancia().findAllSorted(),pagina);
         pa = 5 * (pagina-1);
-        List<Articulo>articulos = ArticulosQueries.getInstancia().findLimitedSorted();
+        List<Articulo>articulos = ArticulosQueries.getInstancia().findLimitedSorted(session.attribute("currentUser"));
         attributes.put("articulos",articulos);
         pa = 0;
 
@@ -222,10 +222,13 @@ public static void main(String [] args)
     post("/page/:pagina", (request, response) -> {
         Map<String, Object> attributes = new HashMap<>();
 
+        Session session = request.session(true);
+
+
         int pagina = Integer.valueOf(request.params("pagina"));
 
         pa = 5 * (pagina-1);
-        List<Articulo>articulos = ArticulosQueries.getInstancia().findLimitedSorted();
+        List<Articulo>articulos = ArticulosQueries.getInstancia().findLimitedSorted((Usuario) session.attribute("currentUser"));
         List<String> arts = new ArrayList<>();
         for (Articulo a:articulos) {
             String tmp = a.getAutor()+"/"+a.getFoto()+"/"+a.getAutor().getUsername()+"/"+a.getDescripcion()+"/"+a.getFecha().toString();
@@ -585,25 +588,27 @@ public static void main(String [] args)
         List<Usuario> choosen = new ArrayList<>();
         List<Usuario> seguidos = new ArrayList<>();
 
-        if(us.getFollow().isEmpty()){
-            for (Usuario h : UsuarioQueries.getInstancia().findAll()){
-                if(!h.getUsername().equals(us.getUsername())){
-                    seguidos.add(h);
-                }
-            }
-            attributes.put("usuarios", seguidos);
-        }else {
-            for(Usuario s : us.getFollow()){
-                for(Usuario f : temp){
-                    if(!f.getUsername().equals(s.getUsername()) && !f.getUsername().equals(us.getUsername())){
-                        choosen.add(f);
-                    }
-                }
-            }
 
-            attributes.put("follows", us.getFollow());
-            attributes.put("usuarios", choosen);
+        for(Usuario usu : temp){
+            for(Usuario sig : usu.getFollow()){
+                if(sig.getUsername().equals(us.getUsername())){
+                    seguidos.add(usu);
+                }
+            }
         }
+
+
+        for (Usuario nF : temp){
+            for(Usuario f : seguidos){
+                if(!(nF.getUsername().equals(f.getUsername())) && !(nF.getUsername().equals(us.getUsername()))){
+                    choosen.add(nF);
+                }
+            }
+        }
+
+            attributes.put("follows", seguidos);
+            attributes.put("usuarios", choosen);
+
 
 
         return new ModelAndView(attributes, "listado.ftl");
@@ -619,9 +624,9 @@ public static void main(String [] args)
         {
             String usernam = request.queryParams("fol");
             Usuario elegido = UsuarioQueries.getInstancia().find(usernam);
-            if(!us.getFollow().contains(elegido)){
-                us.getFollow().add(elegido);
-                UsuarioQueries.getInstancia().editar(us);
+            if(!elegido.getFollow().contains(us)){
+                elegido.getFollow().add(us);
+                UsuarioQueries.getInstancia().editar(elegido);
             }
         }
         else
@@ -629,16 +634,16 @@ public static void main(String [] args)
 
             String nofol = request.queryParams("nfol");
             Usuario elegido = UsuarioQueries.getInstancia().find(nofol);
-            for(Usuario l : us.getFollow()){
-                if(!l.getUsername().equals(elegido.getUsername())){
-                    nuevo.add(l);
+
+            for(Usuario su : elegido.getFollow()){
+                if(!(su.getUsername().equals(us.getUsername()))){
+                    nuevo.add(su);
                 }
             }
-            us.setFollow(nuevo);
-            UsuarioQueries.getInstancia().editar(us);
 
-            /*Usuario usuario = new Usuario(user,nombre,pass);
-            UsuarioQueries.getInstancia().crear(usuario);*/
+            elegido.setFollow(nuevo);
+            UsuarioQueries.getInstancia().editar(elegido);
+
         }
 
         attributes.put("usuarios", UsuarioQueries.getInstancia().findAll());

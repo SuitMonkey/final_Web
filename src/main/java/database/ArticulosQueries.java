@@ -33,26 +33,28 @@ public class ArticulosQueries extends Manejador<Articulo> {
         return lista;
     }
 
-    public List<Articulo> findLimitedSorted(){
-        EntityManager em = getEntityManager();
-        Query query = em.createQuery("SELECT a FROM Articulo a order by  a.fecha desc")
-                .setFirstResult(Main.pa)
-                .setMaxResults(5);
-        List<Articulo> lista = query.getResultList();
-        return lista;
+    public List<Articulo> findLimitedSorted(Usuario us){
+        if(us != null && !(us.getUsername().equals(""))){
+            EntityManager em = getEntityManager();
+            Query query = em.createQuery("SELECT a FROM Articulo a, Usuario u where a.autor.id = u.id and (:us member of u.follow or a.autor.privacidad like :p) order by a.fecha desc")
+                    .setFirstResult(Main.pa)
+                    .setMaxResults(5)
+                    .setParameter("us",us)
+                    .setParameter("p",false);
+            List<Articulo> lista = query.getResultList();
+            return lista;
+        }else {
+            EntityManager em = getEntityManager();
+            Query query = em.createQuery("SELECT a FROM Articulo a where a.autor.privacidad like :p order by a.fecha desc")
+                    .setFirstResult(Main.pa)
+                    .setMaxResults(5)
+                    .setParameter("p",false);
+            List<Articulo> lista = query.getResultList();
+            return lista;
+        }
+
     }
 
-    public List<Articulo> findLimitedSortedFollowed(Usuario us){
-        List<Articulo> lista = new ArrayList<>();
-        EntityManager em = getEntityManager();
-        for (Usuario seguido: us.getFollow()) {
-            Query query = em.createQuery("SELECT a FROM Articulo a WHERE AUTOR_USERNAME ='"+seguido.getUsername()+"'order by  a.fecha desc")
-                    .setFirstResult(Main.pa)
-                    .setMaxResults(5);
-            lista.addAll(query.getResultList());
-        }
-        return lista;
-    }
     public List<Articulo> findAllBy(Usuario us){
         EntityManager em = getEntityManager();
             Query query = em.createQuery("SELECT a FROM Articulo a WHERE AUTOR_USERNAME ='"+us.getUsername()+"'order by  a.fecha desc");
