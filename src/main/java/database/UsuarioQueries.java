@@ -42,6 +42,22 @@ public class UsuarioQueries extends Manejador<Usuario> {
         return result;
     }
 
+    public Usuario findUsuario(String username){
+        EntityManager em = getEntityManager();
+        Query query;
+        Usuario user;
+        try{
+            query = em.createQuery("SELECT a FROM Usuario a WHERE a.username = :username")
+                    .setParameter("username",username);
+            user = (Usuario) query.getSingleResult();
+
+        }catch (Exception e){
+            user = null;
+        }
+
+        return user;
+    }
+
     public boolean findMail(String email){
         EntityManager em = getEntityManager();
         boolean result = false;

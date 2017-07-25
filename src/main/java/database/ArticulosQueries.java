@@ -108,4 +108,15 @@ public class ArticulosQueries extends Manejador<Articulo> {
             em.close();
         }
     }
+
+    public ArrayList<Articulo> findArticuloByDateRange(String from, String to ){
+        EntityManager em = getEntityManager();
+        Query query = em.createQuery("FROM Articulo AS ar WHERE ar.fecha BETWEEN :a AND :s");
+        query.setParameter("a", from+"%");
+        query.setParameter("s", to+"%");
+
+        System.out.println(query.getResultList().size());
+
+        return (ArrayList<Articulo>) query.getResultList();
+    }
 }
