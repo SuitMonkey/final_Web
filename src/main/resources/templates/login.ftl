@@ -54,7 +54,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="login-grids">
 			<div class="col-md-6 log">
 					 <h3>Login</h3>
-					 <p>Welcome, please enter the following to continue.</p>
+					 <p>Bienvenido, por favor llenar lo siguiente para continuar.</p>
 					 <form method="post" action="/validacion">
 						 <h5>User Name:</h5>	
 						 <input type="text" name="user" value="">

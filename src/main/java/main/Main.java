@@ -582,6 +582,18 @@ public static void main(String [] args) throws Exception {
         String nombre = request.queryParams("nombre");
         String pass = request.queryParams("pass");
         String correo = request.queryParams("correo");
+
+        if(user == null ||
+                user.equals("") ||
+                nombre == null ||
+                nombre.equals("") ||
+                pass == null ||
+                pass.equals("") ||
+                correo == null ||
+                correo .equals("")){
+            halt(403,"Al parecer tiene un campo vacio.");
+        }
+
         boolean privat = false;
         try{
             privat = request.queryParams("privat").equals("on")? true : false;
@@ -593,6 +605,7 @@ public static void main(String [] args) throws Exception {
         if(UsuarioQueries.getInstancia().findUser(user) || UsuarioQueries.getInstancia().findMail(correo)){
             halt(403,"Ya existe alguien con este usuario o correo");
         }
+
 
         Usuario usuario = new Usuario(user,foto,nombre,pass,correo,privat,desc,new HashSet<>());
 
@@ -608,6 +621,14 @@ public static void main(String [] args) throws Exception {
 
         String user = request.queryParams("user");
         String pass = request.queryParams("pass");
+
+        if (user == null ||
+                user.equals("") ||
+                pass == null ||
+                pass.equals("")){
+            halt(443,"Al parece hay un campo vacio");
+        }
+
         Usuario comprobar = UsuarioQueries.getInstancia().find(user);
         if(comprobar!=null) {
             if (comprobar.getPassword().equals(pass)) {
