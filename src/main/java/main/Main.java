@@ -14,6 +14,8 @@ import spark.Request;
 import spark.Response;
 import spark.Session;
 import spark.template.freemarker.FreeMarkerEngine;
+import ubicacion.AddressConverter;
+import ubicacion.GoogleResponse;
 import utilidades.JsonUtilidades;
 
 import javax.servlet.MultipartConfigElement;
@@ -66,6 +68,10 @@ public static void main(String [] args) throws Exception {
         manejarError(Main.ERROR_INTERNO,exception, request, response);
     });
 
+    get("ubicacion/:lat/:long", (request, response) -> {
+        GoogleResponse res = new AddressConverter().convertFromLatLong(request.params("lat") + "," + request.params("long"));
+        return res.getResults()[0].getFormatted_address();
+    });
 
     //listar todos los estudiantes.
     get("/articulosRange/:year1/:mes1/:dia1/:year2/:mes2/:dia2",(request, response) -> {
@@ -93,6 +99,8 @@ public static void main(String [] args) throws Exception {
         Map<String, Object> attributes = new HashMap<>();
         Session session = request.session(true);
         Boolean usuario = session.attribute("sesion");
+
+
 
         attributes.put("user",(session.attribute("currentUser")==null)?new Usuario("","",""):((Usuario) session.attribute("currentUser")));
 

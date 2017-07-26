@@ -35,21 +35,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- start-smoth-scrolling -->
     <script type="text/javascript">
         $(document).ready( function (){
-            var variable = "${sesion}";
             $('.logouts').hide();
             $('.follow').hide();
             $('#post').hide();
 
-            if(variable ==="true") {
+           <#if user??>
+               var variable = "${user}";
 
-                $('.logins').hide();
-                $('.logouts').show();
+               if(variable != null) {
 
-            }
-            else {
-                $('.logins').show();
-                $('.logouts').hide();
-            }
+                   $('.logins').hide();
+                   $('.logouts').show();
+
+               }
+
+           </#if>
+
         });
     </script>
 <!-- for portfolio -->

@@ -35,6 +35,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
     <script type="text/javascript">
         $(document).ready( function (){
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(ubicacionActual);
+            } else {
+                alert( "Geolocation is not supported by this browser")
+            }
+
+            function ubicacionActual(posicion) {
+                $.get("ubicacion/" +  posicion.coords.latitude + "/" + posicion.coords.longitude, function (data) {
+                    $("#location").html(data);
+                });
+            }
             var variable = "${sesion}";
             $('.logouts').hide();
             $('.follow').hide();
@@ -76,7 +87,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 		<div class="clearfix"> </div>
 <!-- blog -->
-			<div class="blog">
+        <h3 id="location"></h3>
+
+        <div class="blog">
 				<div class="blog-left">
 					<div class="blog-left-grid">
 					<#if articulos??>
